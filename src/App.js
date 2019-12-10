@@ -1,31 +1,23 @@
 import React, { Component } from "react";
-import Navbar from "./components/Navbar.js";
+import Navbar2 from "./components/Navbar.js";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Articles from "./pages/Articles";
 import "./styles.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import ArticleDetails from "./pages/ArticleDetails.js";
 class App extends Component {
-  state = {
-    page: "home"
-  };
 
   render() {
     return (
       <Router>
-        <Navbar />
+        <Navbar2 />
 
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/articles">
-            <Articles />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/articles/:articleTitle"  component= {ArticleDetails } />
+          <Route path="/about" component= {About}  />
+          <Route path="/articles" component= {Articles} />
+          <Route path="/" component= {Home}/>          
         </Switch>
       </Router>
     );

@@ -5,7 +5,7 @@ class Articles extends Component{
 
   render(){
     return (
-         <div className="row col-md-8"  style={{ margin : 'auto'}}>
+         <div className="row col-md-10"  style={{ margin : 'auto' , justifyContent: 'center'}}>
             
             {content.map( (el) =>
             <Article el={el} key={ content.indexOf(el) }/>

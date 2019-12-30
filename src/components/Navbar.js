@@ -1,18 +1,21 @@
 import React, { Component } from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import {Link} from "react-router-dom";
+
 class Navbar2 extends Component {
   render() {
     return (
-      < Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/"> Home</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/articles">articles</Nav.Link>
-            <Nav.Link href="/about">about</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <Link className="navbar-brand" to="/">Home</Link>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className="navbar-nav">
+            <Link className="nav-item nav-link" to="/about">About</Link>
+            <Link className="nav-item nav-link" to="/articles">Articles</Link>
+          </div>
+        </div>
+      </nav>
     );
   }
 }

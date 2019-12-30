@@ -12,6 +12,7 @@ app.use(express.json());
 
 //MongoDB connection
 const uri= process.env.ATLAS_URI;
+console.log( "**********:"+ uri );
 mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 
 const connection= mongoose.connection;
@@ -28,5 +29,5 @@ app.use('/articles', articlesRouter);
 
 //server lestening
 app.listen(port, () =>{
-    console.log(`Serever is lestening on port: ${port}`);
+    console.log(`Serever is listening on port: ${port}`);
 }); 
